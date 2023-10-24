@@ -17,3 +17,14 @@ Console.WriteLine("3. feladat:");
 var f3 = planets.OrderByDescending(p => p.Terfogat)
                          .First();                        
 Console.WriteLine($"\tA legnagyobb bolygó a {f3.Nev}");
+
+Console.Write("4. feladat:\nAdjon meg egy bolygó nevet:  ");
+string bn = Console.ReadLine();
+bool f4 = false;
+foreach (Planet planet in planets)
+{
+    if (planet.Nev == bn) f4 = !f4;
+}
+if (f4) Console.WriteLine("\tMegtalálható a listában a keresett bolygó");
+else Console.WriteLine("\tNem található meg a listában a keresett bolgyó");
+
