@@ -28,3 +28,16 @@ foreach (Planet planet in planets)
 if (f4) Console.WriteLine("\tMegtalálható a listában a keresett bolygó");
 else Console.WriteLine("\tNem található meg a listában a keresett bolgyó");
 
+Console.Write("5. feladat:\nAdjon meg egy számot:  ");
+int hsz = int.Parse(Console.ReadLine());
+var f5 = planets.Where(p => p.Holdak > hsz);
+if (f5.Count() != 0)
+{
+    Console.WriteLine($"\tA következő bolygóknak van több mint {hsz} db holdja:");
+    Console.Write("\t");
+    foreach(var f in f5)
+    {
+        Console.Write($"'{f.Nev}'");
+    }
+}
+else Console.WriteLine($"\tNincs a listában olyan bolygó, aminek több mint {hsz} db holdja van");
